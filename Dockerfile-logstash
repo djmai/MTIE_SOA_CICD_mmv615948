@@ -10,4 +10,4 @@ ENTRYPOINT ["/usr/local/bin/docker-entrypoint"]
 
 
 RUN mkdir -p ~/volumes/elk-stack/elasticsearch
-RUN sudo mkdir -p ~/volumes/elk-stack/elasticsearch && cd ~/volumes/elk-stack/ && sudo chmod 777 elasticsearch/
+RUN mkdir -p ~/volumes/elk-stack/elasticsearch && cd ~/volumes/elk-stack/ && chmod 777 elasticsearch/
