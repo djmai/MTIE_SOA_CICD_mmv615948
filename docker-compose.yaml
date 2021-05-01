@@ -16,7 +16,7 @@ services:
         - vhostd:/etc/nginx/vhost.d
         - html:/usr/share/nginx/html
         - /var/run/docker.sock:/tmp/docker.sock:ro
-        #- ./config/reverse-proxy/custom-settings.conf:/etc/nginx/conf.d/custom-settings.conf:ro
+        #- ~/config/reverse-proxy/custom-settings.conf:/etc/nginx/conf.d/custom-settings.conf:ro
 
   ###################
   # MySQL Container #
@@ -35,7 +35,7 @@ services:
       MYSQL_PASSWORD: mtie123
     volumes:
       # Dump files for initiating tables
-      - ./data/:/docker-entrypoint-initdb.d/
+      - ~/data/:/docker-entrypoint-initdb.d/
     logging:
         driver: "json-file"
         options:
@@ -70,7 +70,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - ./volumes/elk-stack/elasticsearch:/usr/share/elasticsearch/data
+      - ~/volumes/elk-stack/elasticsearch:/usr/share/elasticsearch/data
 
   ####################
   # Logstach Container #
@@ -85,10 +85,10 @@ services:
       - mysql
       - elasticsearch
     volumes:
-      - ./volumes/logstash/pipeline/:/usr/share/logstash/pipeline/
-      - ./volumes/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
-      - ./volumes/logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml
-      - ./volumes/logstash/config/queries/:/usr/share/logstash/config/queries/
+      - ~/volumes/logstash/pipeline/:/usr/share/logstash/pipeline/
+      - ~/volumes/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ~/volumes/logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml
+      - ~/volumes/logstash/config/queries/:/usr/share/logstash/config/queries/
     logging:
       driver: "json-file"
       options:
