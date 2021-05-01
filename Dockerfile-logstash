@@ -8,5 +8,5 @@ RUN curl -L --output "mysql-connector-java-8.0.22.tar.gz" "https://dev.mysql.com
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint"]
 
-RUN mv /data ~/data
-RUN mv /volumes ~/volumes
+RUN mv ./data ~/data
+RUN mv ./volumes ~/volumes
