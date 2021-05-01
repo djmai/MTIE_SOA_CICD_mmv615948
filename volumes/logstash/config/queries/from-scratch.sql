@@ -1,1 +1,1 @@
-SELECT * FROM mmmv_adw.employee
+SELECT * FROM mmmv_adw.employee WHERE EmployeeID > :sql_last_value
