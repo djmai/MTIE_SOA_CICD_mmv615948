@@ -48,7 +48,7 @@ services:
   # ElasticSearch Container # 
   ###########################
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.9.3
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
     container_name: MRSI-ElasticSearch
     restart: always
     expose:
@@ -99,7 +99,7 @@ services:
   # Kibana Container #
   ####################
   kibana:
-    image: docker.elastic.co/kibana/kibana:7.9.3
+    image: docker.elastic.co/kibana/kibana:7.9.2
     container_name: MRSI-Kibana
     restart: always
     environment:
