@@ -49,7 +49,7 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 TRIGGER `books_after_insert` AFTER INSERT ON `libros` FOR EACH ROW INSERT INTO libros.libros_journal
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 TRIGGER `books_after_insert` AFTER INSERT ON `libros` FOR EACH ROW INSERT INTO mmmv_adw.libros_journal
 	SET
 		action_type = 'create',
 		isbn = NEW.isbn,
@@ -69,18 +69,18 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 TRIGGER `books_after_update` AFTER UPDATE ON `libros` FOR EACH ROW IF NEW.isbn = OLD.isbn THEN
-		INSERT INTO libros.libros_journal
+		INSERT INTO mmmv_adw.libros_journal
 		SET action_type = 'update',
 			isbn = OLD.isbn,
 			action_time = NOW();
 	ELSE
 		-- Set old one as deleted
-		INSERT INTO libros.libros_journal
+		INSERT INTO mmmv_adw.libros_journal
 		SET action_type = 'delete',
 			isbn = OLD.isbn,
 			action_time = NOW();
 		-- AND NEW one created
-		INSERT INTO libros.libros_journal
+		INSERT INTO mmmv_adw.libros_journal
 		SET action_type = 'create',
 			isbn = NEW.isbn,
 			action_time = NOW();
@@ -99,7 +99,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 TRIGGER `books_after_delete` AFTER DELETE ON `libros` FOR EACH ROW INSERT INTO libros.libros_journal
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`%`*/ /*!50003 TRIGGER `books_after_delete` AFTER DELETE ON `libros` FOR EACH ROW INSERT INTO mmmv_adw.libros_journal
 	SET action_type = 'delete',
 		isbn = OLD.isbn,
 		action_time = now() */;;
