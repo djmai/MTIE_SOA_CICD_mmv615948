@@ -24,7 +24,7 @@ services:
   mysql:
     image: mysql:8
     container_name: MRSI-MySQL
-    restart: always
+    # restart: on-failure
     ports:
       - 3306:3306
     environment:
