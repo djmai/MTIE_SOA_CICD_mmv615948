@@ -7,3 +7,6 @@
 
 - pipeline.id: incremental-pipeline
   path.config: "/usr/share/logstash/pipeline/incremental.conf"
+
+- pipeline.id: incremental-pipeline
+  path.config: "/usr/share/logstash/pipeline/sales_order_detail.conf"
