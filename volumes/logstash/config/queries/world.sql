@@ -1,0 +1,1 @@
+select country.Code, country.Name, countrylanguage.Language, countrylanguage.IsOfficial, country.Continent, country.Region, country.SurfaceArea, country.Population, country.LifeExpectancy, country.GovernmentForm, country.HeadOfState FROM country, countrylanguage where country.Code = countrylanguage.CountryCode;

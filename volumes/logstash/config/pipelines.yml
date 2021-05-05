@@ -16,3 +16,6 @@
 
 - pipeline.id: loans-pipeline
   path.config: "/usr/share/logstash/pipeline/loans.conf"
+
+- pipeline.id: world-pipeline
+  path.config: "/usr/share/logstash/pipeline/world.conf"
