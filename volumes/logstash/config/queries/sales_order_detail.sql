@@ -1,1 +1,1 @@
-SELECT * FROM mmmv_adw.salesorderdetail
+SELECT * FROM mmmv_adw.salesorderdetail;
