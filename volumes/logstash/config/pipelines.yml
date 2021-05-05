@@ -13,3 +13,6 @@
 
 - pipeline.id: employees-pipeline
   path.config: "/usr/share/logstash/pipeline/employees.conf"
+
+- pipeline.id: loans-pipeline
+  path.config: "/usr/share/logstash/pipeline/loans.conf"
