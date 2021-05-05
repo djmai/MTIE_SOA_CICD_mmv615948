@@ -1,17 +1,1 @@
-SELECT
-	country.CODE,
-	country.NAME,
-	countrylanguage.LANGUAGE,
-	countrylanguage.IsOfficial,
-	country.Continent,
-	country.Region,
-	country.SurfaceArea,
-	country.Population,
-	country.LifeExpectancy,
-	country.GovernmentForm,
-	country.HeadOfState 
-FROM
-	mmmv_adw.country,
-	mmmv_adw.countrylanguage 
-WHERE
-	country.CODE = countrylanguage.CountryCode;
+select country.Code, country.Name, countrylanguage.Language, countrylanguage.IsOfficial, country.Continent, country.Region, country.SurfaceArea, country.Population, country.LifeExpectancy, country.GovernmentForm, country.HeadOfState FROM country, countrylanguage where country.Code = countrylanguage.CountryCode;
