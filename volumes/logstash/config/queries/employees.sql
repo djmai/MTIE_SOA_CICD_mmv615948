@@ -8,9 +8,9 @@ SELECT
 	E.Gender, 
 	C.ModifiedDate
 FROM
-	contact AS C
+	mmmv_adw.contact AS C
 	INNER JOIN
-	employee AS E
+	mmmv_adw.employee AS E
 	ON 
 		C.ContactID = E.ContactID
 ORDER BY E.EmployeeID
