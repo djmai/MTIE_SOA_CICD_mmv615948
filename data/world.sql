@@ -22,9 +22,9 @@ SET @old_autocommit=@@autocommit;
 
 /*!40000 DROP DATABASE IF EXISTS `world`*/;
 
-CREATE DATABASE `world` DEFAULT CHARACTER SET utf8mb4;
+-- CREATE DATABASE `world` DEFAULT CHARACTER SET utf8mb4;
 
-USE `world`;
+-- USE `world`;
 
 --
 -- Table structure for table `city`
